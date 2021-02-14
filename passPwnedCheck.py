@@ -6,6 +6,8 @@
 # As they implement a k-Anonymity model; which allows querying by partial hash only
 #
 
+import hashlib
+
 # Adding interactive mode
 print('--<>--')
 print('Welcome, you are using passPwnedCheck.py in interactive mode!')
@@ -17,3 +19,7 @@ print('--<>--')
 print('Thank you, searching if that phrase has been pwned!')
 print('...')
 
+# Hashing password to sha1
+pwdHash = hashlib.sha1(password.encode())
+pwdHashValue = pwdHash.hexdigest()
+print(pwdHashValue)
