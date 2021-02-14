@@ -7,6 +7,7 @@
 #
 
 import hashlib
+import requests
 
 # Adding interactive mode
 print('--<>--')
@@ -22,4 +23,10 @@ print('...')
 # Hashing password to sha1
 pwdHash = hashlib.sha1(password.encode())
 pwdHashValue = pwdHash.hexdigest()
+
+# Dividing hash to query API
+hashPrefix = pwdHashValue[0:5]
+hashSuffix = pwdHashValue[5:40]
 print(pwdHashValue)
+print(hashPrefix)
+print(hashSuffix)
